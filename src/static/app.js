@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
               await fetchActivities();
             } catch (error) {
+              messageDiv.textContent = error.message || "Failed to cancel signup";
+              messageDiv.className = "error";
+              messageDiv.classList.remove("hidden");
               console.error("Error cancelling signup:", error);
             }
           });
